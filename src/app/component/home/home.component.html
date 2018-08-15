@@ -1,0 +1,18 @@
+<h1>Not Done</h1>
+<ul *ngFor="let item of items">
+  <li (click)="toggleStatus(item)" [ngClass]="{ 'complete' : item.status }" *ngIf="!item.done">{{item.name}} 
+    <span (click)="removeItem(item)">Remove</span> <span (click)="deleteItem(i)"> Delete</span>
+  </li>
+</ul>
+
+<h1>Done</h1>
+<ul *ngFor="let item of items; let i = index">
+  <li (click)="toggleStatus(item)" [ngClass]="{ 'complete' : item.status }" *ngIf="item.done">{{item.name}}
+    <span (click)="removeItem(item)">Remove</span> <span (click)="deleteItem(i)"> Delete</span>
+  </li>
+</ul>
+
+<form (ngSubmit)="addItem()">
+  <input type="text" placeholder="New Item" name="item" [(ngModel)]="newItem">
+  <button>Add</button>
+</form>
