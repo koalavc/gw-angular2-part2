@@ -1,0 +1,112 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$md-gbckiwi: (
+    50 : #f1fce8,
+    100 : #ddf7c5,
+    200 : #c7f29f,
+    300 : #b0ed79,
+    400 : #9fe95c,
+    500 : #8ee53f,
+    600 : #86e239,
+    700 : #7bde31,
+    800 : #71da29,
+    900 : #5fd31b,
+    A100 : #ffffff,
+    A200 : #e3ffd4,
+    A400 : #c1ffa1,
+    A700 : #b0ff88,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-blue: (
+    50 : #ecefff,
+    100 : #d0d7ff,
+    200 : #b1bcff,
+    300 : #91a1ff,
+    400 : #7a8dff,
+    500 : #6279ff,
+    600 : #5a71ff,
+    700 : #5066ff,
+    800 : #465cff,
+    900 : #3449ff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #dfe2ff,
+    A700 : #c5caff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-red: (
+    50 : #ffe6e3,
+    100 : #ffc1b9,
+    200 : #ff978b,
+    300 : #ff6d5d,
+    400 : #ff4e3a,
+    500 : #ff2f17,
+    600 : #ff2a14,
+    700 : #ff2311,
+    800 : #ff1d0d,
+    900 : #ff1207,
+    A100 : #ffffff,
+    A200 : #fff4f4,
+    A400 : #ffc2c1,
+    A700 : #ffaaa7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$my-app-primary: mat-palette($md-gbckiwi);
+$my-app-accent: mat-palette($md-blue);
+$my-app-warn: mat-palette($md-red);
+
+$my-theme: mat-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+// $my-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-theme);
