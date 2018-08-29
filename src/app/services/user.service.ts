@@ -16,18 +16,19 @@ export class UserService {
 
   register(user: User){
     return this.api.post('/postUser', user).subscribe((res: any) => {
-      this.localStorage.set('currentUser', res.user);
+      // this.localStorage.set('currentUser', res.user);
     }, err => console.log('There was an error!'), () => this.router.navigateByUrl("/"));
   }
 
   login(user: any){
     return this.api.post('/userLogin', user).subscribe((res: any) => {
-      this.localStorage.set('currentUser', res.user);
+      // this.localStorage.set('currentUser', res.user);
     }, err => console.log(err), () => this.router.navigateByUrl('/'));
   }
 
   logout(){
     this.localStorage.remove('currentUser');
+    this.router.navigateByUrl('/login');
   }
 
   getAllUsers(){

@@ -19,9 +19,9 @@ export class NavComponent {
     );
 
   // Get is a built in TypeScript method
-  get user(): any{
-    return this.localStorage.get('currentUser');
-  }
+  // get user(): any{
+  //   return this.localStorage.get('currentUser');
+  // }
     
   logout(){
     this.userService.logout();

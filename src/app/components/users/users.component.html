@@ -1,5 +1,6 @@
 <div class="margin-body">
   <h1 class="text-center">All Users</h1>
+  <!-- <table mat-table [dataSource]="users" class="mat-elevation-z8" *ngIf="user?.firstName; else noLength"> -->
   <table mat-table [dataSource]="users" class="mat-elevation-z8">
 
     <ng-container matColumnDef="firstName">
@@ -20,4 +21,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <!-- <ng-template #noLength >
+    Sorry, I can't render right now lol
+  </ng-template> -->
 </div>

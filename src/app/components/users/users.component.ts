@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { User } from "../../classes/user";
 import { UserService } from "../../services/user.service";
 
 @Component({
@@ -10,6 +10,7 @@ import { UserService } from "../../services/user.service";
 export class UsersComponent implements OnInit {
 
   users = [];
+  exists: Boolean = false;
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
 
   constructor(private userService: UserService) { }
@@ -19,6 +20,10 @@ export class UsersComponent implements OnInit {
       console.log(res);
       this.users = res;
     });
+  }
+
+  usersHasLength(){
+    return this.users.length;
   }
 
   ngOnInit() {
