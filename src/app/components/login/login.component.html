@@ -2,7 +2,13 @@
   <h1 class="text-center">Login</h1>
   <form class="form-container" (ngSubmit)="login()">
     <mat-form-field>
-      <input matInput type="text" placeholder="Email" name="email" [(ngModel)]="authUser.email">
+      <input matInput type="text" 
+            placeholder="Email" 
+            name="email" 
+            [errorStateMatcher]="matcher"
+            [formControl]="authUser.emailFormControl">
+            <mat-error *ngIf="authUser.emailFormControl.hasError('email') && !authUser.emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
+            <mat-error *ngIf="authUser.emailFormControl.hasError('required')">An email is requried</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="authUser.password">
@@ -10,4 +16,3 @@
     <button mat-raised-button color="warn">Login</button>
   </form>
 </div>
-
