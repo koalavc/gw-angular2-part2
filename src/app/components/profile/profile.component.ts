@@ -13,6 +13,7 @@ import { UserService } from '../../services/user.service';
 export class ProfileComponent implements OnInit {
   user: IUser;
   url: string = '';
+  isActive: boolean;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 

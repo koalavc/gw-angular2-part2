@@ -11,7 +11,7 @@ export class ProfileHomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getProfileURL();
+    // this.userService.getProfileURL();
   }
 
 }
