@@ -19,14 +19,17 @@ import { MatToolbarModule,
           MatListModule, 
           MatInputModule, 
           MatTableModule, 
-          MatTabsModule } from '@angular/material';
+          MatTabsModule,
+          MatCardModule } from '@angular/material';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { PostComponent } from './classes/post/post.component';
+import { GithubComponent } from './components/github/github.component';
+import { SearchPipe } from './pipes/search.pipe';
+// import { PostComponent } from './classes/post/post.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { PostComponent } from './classes/post/post.component';
     UsersComponent,
     ProductsComponent,
     NotFoundComponent,
-    PostComponent
+    GithubComponent,
+    SearchPipe,
+    // PostComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,8 @@ import { PostComponent } from './classes/post/post.component';
     MatInputModule,
     MatTableModule,
     ReactiveFormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

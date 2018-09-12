@@ -8,20 +8,15 @@ import { UsersComponent } from '../../components/users/users.component';
 import { NotFoundComponent } from "../../components/not-found/not-found.component";
 
 import { ProfileModule } from "../profile/profile.module";
+import { GithubComponent } from '../../components/github/github.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "users", component: UsersComponent },
-  // { path: 'user/:id', component: ProfileComponent },
-  // { path: "user/:id", component: ProfileComponent, children: [
-  //     { path: '', redirectTo: 'home', pathMatch: 'full'},
-  //     { path: "home", component: ProfileHomeComponent },
-  //     { path: "about", component: ProfileAboutComponent },
-  //     { path: "contact", component: ProfileContactComponent }
-  // ]},
   { path: 'user/:id', loadChildren: () => ProfileModule },
+  { path: 'github', component:GithubComponent },
   // { path: 'user/:id', loadChildren: '../profile/profile.module#ProfileModule' },
   { path: '**', component: NotFoundComponent}
 ];
