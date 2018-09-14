@@ -1,11 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
+import { Component, NO_ERRORS_SCHEMA } from "@angular/core";
+
 import { AppComponent } from './app.component';
+import { NavComponent } from "./components/nav/nav.component";
+// @Component({selector: 'app-nav', template: ''})
+// class NavComponent {}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent
       ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -22,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-intro-part2!');
+    expect(compiled.querySelector('h1'));
   }));
 });
