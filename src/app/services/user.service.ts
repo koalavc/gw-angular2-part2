@@ -7,6 +7,7 @@ import { User } from '../classes/user';
 import { ApiService } from "./api.service";
 import { LocalStorageService } from "./local-storage.service";
 import { IUser } from '../interfaces/i-user';
+// import { fakeBackendFactory } from "../fake-backend/fake-backend";
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class UserService {
   }
 
   login(user: any){
-    return this.api.post('/userLogin', user).subscribe((res: any) => {
+    return this.api.post('api/authenticate', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user);
     }, err => console.log(err), () => this.router.navigateByUrl('/'));
   }

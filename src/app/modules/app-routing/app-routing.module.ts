@@ -9,6 +9,7 @@ import { NotFoundComponent } from "../../components/not-found/not-found.componen
 
 import { ProfileModule } from "../profile/profile.module";
 import { GithubComponent } from '../../components/github/github.component';
+import { AdminComponent } from '../../components/admin/admin.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "users", component: UsersComponent },
   { path: 'user/:id', loadChildren: () => ProfileModule },
   { path: 'github', component:GithubComponent },
+  { path: 'admin', component: AdminComponent},
   // { path: 'user/:id', loadChildren: '../profile/profile.module#ProfileModule' },
   { path: '**', component: NotFoundComponent}
 ];

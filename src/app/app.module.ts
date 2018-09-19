@@ -29,6 +29,11 @@ import { ProductsComponent } from './components/products/products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
 import { SearchPipe } from './pipes/search.pipe';
+
+import { fakeBackendProvider } from "./fake-backend/fake-backend";
+import { MockBackend } from "@angular/http/testing";
+import { BaseRequestOptions } from "@angular/http";
+import { AdminComponent } from './components/admin/admin.component';
 // import { PostComponent } from './classes/post/post.component';
 
 @NgModule({
@@ -43,6 +48,7 @@ import { SearchPipe } from './pipes/search.pipe';
     NotFoundComponent,
     GithubComponent,
     SearchPipe,
+    AdminComponent
     // PostComponent
   ],
   imports: [
@@ -63,7 +69,11 @@ import { SearchPipe } from './pipes/search.pipe';
     MatTabsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
